@@ -9,75 +9,162 @@ import MainSlateVideo from "../assets/videos/main_slate.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MainSlate = () => {
+const MainPage = () => {
+    /* ---------------------- 첫 번째 섹션(MainSlate) ---------------------- */
+    const slateRef = useRef(null);
 
-    const slateRef = useRef(null); 
-        useEffect(() => {
+    useEffect(() => {
         const slateSection = slateRef.current;
 
         const slateTimeline = gsap.timeline({
-            scrollTrigger: {
+        scrollTrigger: {
             trigger: slateSection,
-            start: "top top", // 트리거 요소 상단이 뷰포트 상단에 닿으면 시작
-            end: "+=600%", // 시작점부터 뷰포트의 6배 스크롤 길이까지 애니메이션 진행
+            start: "top top",
+            end: "+=600%",
             scrub: 1,
-            pin: true, // 섹션을 스크롤 동안 고정
-            anticipatePin: 1,
-            },
+            pin: true,
+            anticipatePin: 1
+        }
         });
 
-        // 타임라인에서 사용할 DOM 요소를 변수로 저장
-        const upSpan = slateSection.querySelector(".slate-up span"); 
+        const upSpan = slateSection.querySelector(".slate-up span");
         const downSpan = slateSection.querySelector(".slate-down span");
         const upBox = slateSection.querySelector(".slate-up");
         const downBox = slateSection.querySelector(".slate-down");
         const vod = slateSection.querySelector(".slate-vod");
 
         slateTimeline
-            .to(upSpan, { y: "-50px", ease: "power1.in", duration: 0.1 }, 0) // 상단 텍스트 위로 50px 이동
-            .to(downSpan, { y: "50px", ease: "power1.in", duration: 0.1 }, 0) // 하단 텍스트 아래로 50px 이동
-            .to(upBox, { y: "-100%", ease: "power1.in", duration: 0.1 }, 0.1) // 상단 박스는 화면 밖으로 위로 이동
-            .to(downBox, { y: "100%", ease: "power1.in", duration: 0.1 }, 0.1) // 하단 박스는 화면 밖으로 아래로 이동
-            .to(vod, { clipPath: "inset(calc(50% - 300px) calc(50% - 640px) round 30px)", duration: 0.1 }) // clip-path를 사용해 특정 영역만 보이도록 애니메이션
+        .to(upSpan, { y: "-50px", ease: "power1.in", duration: 0.1 }, 0)
+        .to(downSpan, { y: "50px", ease: "power1.in", duration: 0.1 }, 0)
+        .to(upBox, { y: "-100%", ease: "power1.in", duration: 0.1 }, 0.1)
+        .to(downBox, { y: "100%", ease: "power1.in", duration: 0.1 }, 0.1)
+        .to(
+            vod,
+            {
+            clipPath:
+                "inset(calc(50% - 300px) calc(50% - 640px) round 30px)",
+            duration: 0.1
+            }
+        );
 
-        // Cleanup
         return () => {
-            if (slateTimeline.scrollTrigger) slateTimeline.scrollTrigger.kill();
-            slateTimeline.kill();
+        if (slateTimeline.scrollTrigger) slateTimeline.scrollTrigger.kill();
+        slateTimeline.kill();
         };
-        }, []);
+    }, []);
 
-        return (
+    /* ---------------------- 두 번째 섹션(MainZoom) ---------------------- */
+    const zoomRef = useRef(null);
 
-            <div class="slate-wrapper">
-                <section
+    useEffect(() => {
+        const zoomTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: zoomRef.current,
+            start: "top top",
+            end: "+=150%",
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1
+        }
+        });
+
+        zoomTimeline
+        .to(".zoom-group", { clipPath: "inset(-10% round 20px)" })
+        .to(".zoom-txt > strong", { color: "#2D3EBD" }, 0.5)
+        .fromTo(
+            ".zoom-obj",
+            { width: "0", margin: "0" },
+            {
+            width: "auto",
+            margin: "0 5px 0 10px",
+            duration: 0.2
+            },
+            0.5
+        )
+        .to(".main-zoom", { backgroundColor: "transparent" });
+
+        return () => {
+        if (zoomTimeline.scrollTrigger) zoomTimeline.scrollTrigger.kill();
+        zoomTimeline.kill();
+        };
+    }, []);
+
+    /* ---------------------- 리턴 (두 섹션 통합) ---------------------- */
+    return (
+        <div className="slate-wrapper">
+            {/* ---------- MainSlate 섹션 ---------- */}
+            <section
                 className="main-slate overflow-hidden relative w-full txt-c"
                 ref={slateRef}
-                >
-                    {/* 상단 텍스트 */}
-                    <div className="slate-txt slate-up flex justify-center w-full font-800 text-64 leading-89 bg-white">
-                        <span>이커머스가<br/> 연결되고 변화해서</span>
-                    </div>
-                    <div className="slate-txt slate-down flex justify-center w-full font-800 text-64 leading-89 bg-white">
-                        <span>큰 파도를<br/> 만들어 냅니다.</span>
-                    </div>
-                    <div className="slate-wrap">
-                        <video
-                            playsInline
-                            autoPlay
-                            loop
-                            muted
-                            preload="auto"
-                            poster={MainSlatePoster} // 동영상이 재생되기 전까지 표시 될 이미지 (썸네일)
-                            className="slate-vod"
-                        >
+            >
+                <div className="slate-txt slate-up flex justify-center w-full font-800 text-64 leading-89 bg-white">
+                    <span>
+                        이커머스가<br />연결되고 변화해서
+                    </span>
+                </div>
+
+                <div className="slate-txt slate-down flex justify-center w-full font-800 text-64 leading-89 bg-white">
+                    <span>
+                        큰 파도를 <br />만들어 냅니다.
+                    </span>
+                </div>
+
+                <div className="slate-wrap">
+                    <video
+                        playsInline
+                        autoPlay
+                        loop
+                        muted
+                        preload="auto"
+                        poster={MainSlatePoster}
+                        className="slate-vod"
+                    >
                         <source src={MainSlateVideo} type="video/mp4" />
-                        </video>
+                    </video>
+                </div>
+            </section>
+
+            {/* ---------- MainZoom 섹션 ---------- */}
+            <section
+                className="main-zoom overflow-hidden relative w-full txt-c"
+                ref={zoomRef}
+            >
+                <div className="zoom-group flex justify-center items-center bg-white">
+                    <div className="zoom-txt font-800 text-44 leading-89">
+                        그 동안 고객과 셀러의
+                        <br className="ver-mo" />
+                        연결성을 강화하기 위해
+                        <br />
+                        독립적이고 자율적인
+                        <br className="ver-mo" />
+                        연합군처럼 움직여 왔지만,
+                        <br />
+                        <strong>생성형 Ai 플레이</strong>
+                        <img
+                        src="./images/main_plai.png"
+                        className="zoom-obj align-middle"
+                        alt=""
+                        />
+                        를
+                        <br className="ver-mo" />
+                        기반으로 한
+                        <br className="ver-mo" />
+                        <strong>One Team</strong>
+                        <img
+                        src="./images/main_oneteam.png"
+                        className="zoom-obj align-middle"
+                        alt=""
+                        />
+                        으로서
+                        <br />
+                        시너지 극대화에
+                        <br className="ver-mo" />
+                        최선을 다하고 있습니다.
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+        </div>
+    );
+};
 
-        );
-    };
-
-export default MainSlate;
+export default MainPage;

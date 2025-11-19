@@ -1,11 +1,12 @@
 // 라이브러리 불러오기
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Page4 = () => {
+    
     const sectionRef = useRef(null);
 
     useEffect(() => {

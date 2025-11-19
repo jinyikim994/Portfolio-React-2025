@@ -1,16 +1,17 @@
+// 라이브러리 불러오기
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-// 이미지, 비디오 import
+// 이미지, 비디오 불러오기
 import MainSlatePoster from "../assets/images/main_slate.jpg";
 import MainSlateVideo from "../assets/videos/main_slate.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MainSlate = () => {
-    const slateRef = useRef(null); 
 
+    const slateRef = useRef(null); 
         useEffect(() => {
         const slateSection = slateRef.current;
 
@@ -47,6 +48,7 @@ const MainSlate = () => {
         }, []);
 
         return (
+
             <div class="slate-wrapper">
                 <section
                 className="main-slate overflow-hidden relative w-full txt-c"
@@ -66,7 +68,7 @@ const MainSlate = () => {
                             loop
                             muted
                             preload="auto"
-                            poster={MainSlatePoster}
+                            poster={MainSlatePoster} // 동영상이 재생되기 전까지 표시 될 이미지 (썸네일)
                             className="slate-vod"
                         >
                         <source src={MainSlateVideo} type="video/mp4" />
@@ -74,6 +76,7 @@ const MainSlate = () => {
                     </div>
                 </section>
             </div>
+
         );
     };
 

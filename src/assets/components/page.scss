@@ -111,9 +111,6 @@
 .main-slate .slate-txt.slate-up { top: 0; align-items: end; }
 .main-slate .slate-txt.slate-down { top: calc(100vh / 2); }
 
-// MainZoom
-
-
 // Section7
 .section7 {
     height: 100vh;
@@ -143,12 +140,26 @@
         height: 100%; 
         transform: translate(-50%, -50%); 
         clip-path: inset(50%);
-    }
 
-    strong{
-        font-weight: 600;
-    }
+        .zoom-txt{
+            font-family: 'Pretendard';
 
+            strong{
+                font-weight: 800;
+            }
+        }
+    }
 }
 
+// 반응형
+@media (max-width: 768px) {
 
+    .main-slate .slate-txt{
+        font-size: 32px;
+        line-height: 45px;
+    }
+
+    .zoom-txt{
+        font-size: 20px;
+    }
+}

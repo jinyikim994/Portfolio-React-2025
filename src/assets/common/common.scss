@@ -1,80 +1,5 @@
-/* Align */ 
-.t-center{text-align: center;}
-.t-left{text-align: left;}
-.t-right{text-align: right;}
-
-/* Title */
-.tit-dep1{margin:20px 0; font-size:28px;}
-.tit-dep2{margin:20px 0; font-size:24px;}
-.tit-dep3{margin:20px 0; font-size:22px;}
-.tit-dep4{margin:20px 0; font-size:20px;}
-.tit-dep5{margin:20px 0; font-size:16px;}
-
-/* Text */
-.txt-s{font-size:13px;}
-.txt-m{font-size:20px;}
-.txt-l{font-size:25px;}
-
-/* Bold */
-.bold-l{font-weight:100;}
-.bold-m{font-weight:400;}
-.bold{font-weight:600;}
-
-/* Color */
-.c-red{color:#ff0000;}
-.c-orange{color: #f46600;}
-.c-green{color:#008000;}
-.c-blue{color: #0066ff;}
-.c-white{color:#fff;}
-.c-pink{color:#ffaea6;}
-.c-black{color:#000;}
-.c-gray{color: #D3D3D3;}
-
-/* Border */
-.b-gray{border:1px solid #ccc;}
-.b-pink{border:1px solid #ffaea6;}
-.b-orange{border:1px solid #fd6b23;}
-.b-green{border:1px solid #008000;}
-.c-red{ color:red; }
-
-/* Background */
-.bg-black{background:#111;}
-.bg-gray{background:#ccc;}
-.bg-gold{background:#f5cc0d;color:#000;font-weight:600;}
-
-/* Margin */
-.mt10{margin-top:10px;}
-.mt20{margin-top:20px;}
-.mt30{margin-top:30px;}
-.mt50{margin-top:50px;}
-.mr10{margin-right:10px;}
-.mb10{margin-bottom:10px;}
-.mb20{margin-bottom:20px;}
-.mb30{margin-bottom:30px;}
-.mb50{margin-bottom:50px;}
-.ml10{margin-left:10px;}
-
-/* Padding */
-.p20{padding:20px;}
-.pt10{padding-top:10px;}
-.pt15{padding-top:15px;}
-.pt20{padding-top:20px;}
-.pt50{padding-top:50px;}
-.pr10{padding-right:10px;}
-.pb10{padding-bottom:10px;}
-.pb20{padding-bottom:20px;}
-.pl10{padding-left:10px;}
-
-/* Table*/
-.th-10 { width: 10%; }
-.th-20 { width: 20%; }
-.th-30 { width: 30%; }
-.th-40 { width: 40%; }
-.th-50 { width: 50%; }
-
-
 /* =============================================================================
-    Common
+    Reset
 ========================================================================== */
 html, body { width: 100%; }
 html, body, header, main, form, fieldset, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, button, xmp, pre { margin: 0; padding: 0; }
@@ -140,6 +65,9 @@ iframe { width: 100%; border: 0; }
 .btn-xl { height: 60px; padding: 0 20px; font-size: 18px; background: #000; color: #fff; }
 .btn-xl-solid { height: 60px; padding: 0 20px; font-size: 18px; border: 1px solid #ccc; background: #fff; }
 
+/* =============================================================================
+    Common
+========================================================================== */
 .hidden { display: none; }
 .fixed { position: fixed; }
 .absolute { position: absolute; }
@@ -479,7 +407,3 @@ iframe { width: 100%; border: 0; }
 .thumbnail { width:100%; background: no-repeat center; background-size: cover; }
 .thumbnail.left { background: no-repeat 0 0; background-size: cover; }
 
-:root {
-    --swiper-navigation-size: 0 !important;
-    --swiper-theme-color: #000 !important;
-}

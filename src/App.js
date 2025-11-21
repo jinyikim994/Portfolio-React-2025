@@ -9,7 +9,7 @@ import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import MainSlate from "./pages/Page3";
 import Page4 from "./pages/Page4";
-import Page5 from "./pages/Page5";
+import MainWave from "./pages/Page5";
 
 function App() {
     return (
@@ -24,7 +24,7 @@ function App() {
                     <Route path="/Page2" element={<Page2 />} />
                     <Route path="/Page3" element={<MainSlate />} />
                     <Route path="/Page4" element={<Page4 />} />
-                    <Route path="/Page5" element={<Page5 />} />
+                    <Route path="/Page5" element={<MainWave />} />
                 </Routes>
             {/* Footer */}
             <Footer />

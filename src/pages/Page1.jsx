@@ -37,80 +37,78 @@ const Page1 = () => {
                     ease: "expo.out",
                 });
             });
-            
         });
 
         return () => ctx.revert(); 
         }, []);
 
-
-    return (
-        
-        <div className="smooth-wrapper">
-            <div className="smooth-content">
-                <div className="text-animation">
-                    A dozen, a gross, and a score
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus three times the square root of four
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Divided by seven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus five times eleven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Is nine squared and not a bit more.
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    A dozen, a gross, and a score
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus three times the square root of four
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Divided by seven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus five times eleven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Is nine squared and not a bit more.
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    A dozen, a gross, and a score
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus three times the square root of four
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Divided by seven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Plus five times eleven
-                    <span></span>
-                </div>
-                <div className="text-animation">
-                    Is nine squared and not a bit more.
-                    <span></span>
+        return (
+            
+            <div className="smooth-wrapper">
+                <div className="smooth-content">
+                    <div className="text-animation">
+                        A dozen, a gross, and a score
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus three times the square root of four
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Divided by seven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus five times eleven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Is nine squared and not a bit more.
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        A dozen, a gross, and a score
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus three times the square root of four
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Divided by seven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus five times eleven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Is nine squared and not a bit more.
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        A dozen, a gross, and a score
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus three times the square root of four
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Divided by seven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Plus five times eleven
+                        <span></span>
+                    </div>
+                    <div className="text-animation">
+                        Is nine squared and not a bit more.
+                        <span></span>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
 };
 
 export default Page1;

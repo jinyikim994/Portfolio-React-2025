@@ -1,10 +1,11 @@
+// 라이브러리 불러오기
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 // components
 import Header from "./components/layout/Header";
 import Main from "./components/layout/Main";
 import Footer from "./components/layout/Footer";
-// Page
+// Page 연동
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import MainSlate from "./pages/Page3";

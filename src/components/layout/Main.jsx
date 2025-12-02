@@ -1,3 +1,4 @@
+// 라이브러리 불러오기
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +14,7 @@ const Main = () => {
     // 메인 이미지 확대 애니메이션
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".wrapper",
+        trigger: ".wrapper", // 스크롤 시작 점
         start: "top top",
         end: "+=150%",
         pin: true,

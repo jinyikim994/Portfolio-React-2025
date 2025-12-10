@@ -51,7 +51,7 @@ gsap.registerPlugin(ScrollTrigger);
 
                 // Cleanup
                 return () => {
-                ScrollTrigger.getAll().forEach((st) => st.kill());
+                    ScrollTrigger.getAll().forEach((st) => st.kill());
                 };
         }, []);
 
